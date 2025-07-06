@@ -1,0 +1,504 @@
+/**
+ * Simple Funnel Tracker - Admin Styles
+ * 
+ * Styles for WordPress admin interface
+ */
+
+/* General Admin Styles */
+.sfft-admin-page {
+    max-width: 1200px;
+}
+
+.sfft-admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sfft-admin-header h1 {
+    margin: 0;
+}
+
+.sfft-admin-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Funnel Management Styles */
+.sfft-funnel-steps {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    background: #fafafa;
+}
+
+.sfft-steps-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sfft-step-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.sfft-step-header {
+    background: #f9f9f9;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sfft-step-header h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.sfft-step-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.sfft-step-actions button {
+    background: #666;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sfft-step-actions button:hover {
+    background: #333;
+}
+
+.sfft-move-step-up:hover {
+    background: #3498db;
+}
+
+.sfft-move-step-down:hover {
+    background: #3498db;
+}
+
+.sfft-remove-step:hover {
+    background: #e74c3c;
+}
+
+.sfft-step-fields {
+    padding: 20px;
+    width: 100%;
+}
+
+.sfft-step-fields td {
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+.sfft-step-fields label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.sfft-step-fields input,
+.sfft-step-fields select {
+    width: 100%;
+    max-width: 400px;
+}
+
+.sfft-step-fields .regular-text {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.sfft-step-fields .regular-text:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 1px #3498db;
+    outline: none;
+}
+
+/* Form validation styles */
+.error {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 1px #e74c3c !important;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+/* Analytics Dashboard Styles */
+.sfft-analytics-filters {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.sfft-analytics-summary {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.sfft-chart-container {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.sfft-analytics-table {
+    margin-top: 30px;
+}
+
+.sfft-analytics-table h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.sfft-conversion-rate {
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.sfft-conversion-rate.good {
+    background: #d4edda;
+    color: #155724;
+}
+
+.sfft-conversion-rate.average {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.sfft-conversion-rate.poor {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.sfft-baseline {
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* UTM Performance Styles */
+.sfft-utm-performance {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.sfft-utm-filters {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.sfft-utm-filters label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.sfft-utm-filters input {
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 150px;
+}
+
+/* List Table Enhancements */
+.wp-list-table .column-steps {
+    width: 80px;
+    text-align: center;
+}
+
+.wp-list-table .column-status {
+    width: 100px;
+}
+
+.wp-list-table .column-created_at {
+    width: 120px;
+}
+
+/* Status badges */
+.sfft-status-active {
+    background: #d4edda;
+    color: #155724;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sfft-status-inactive {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sfft-status-draft {
+    background: #fff3cd;
+    color: #856404;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Settings Page Styles */
+.sfft-settings-section {
+    background: white;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.sfft-settings-section h3 {
+    margin: 0;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    color: #2c3e50;
+}
+
+.sfft-settings-section .form-table {
+    margin: 0;
+}
+
+.sfft-settings-section .form-table th,
+.sfft-settings-section .form-table td {
+    padding: 15px 20px;
+}
+
+/* Notice Styles */
+.sfft-notice {
+    margin: 15px 0;
+    padding: 12px;
+    border-left: 4px solid #0073aa;
+    background: #f9f9f9;
+}
+
+.sfft-notice.notice-success {
+    border-left-color: #46b450;
+}
+
+.sfft-notice.notice-warning {
+    border-left-color: #ffb900;
+}
+
+.sfft-notice.notice-error {
+    border-left-color: #dc3232;
+}
+
+/* Button Styles */
+.sfft-button-primary {
+    background: #3498db;
+    border-color: #2980b9;
+    color: white;
+}
+
+.sfft-button-primary:hover,
+.sfft-button-primary:focus {
+    background: #2980b9;
+    border-color: #1f618d;
+}
+
+.sfft-button-secondary {
+    background: #95a5a6;
+    border-color: #7f8c8d;
+    color: white;
+}
+
+.sfft-button-secondary:hover,
+.sfft-button-secondary:focus {
+    background: #7f8c8d;
+    border-color: #6c7b7d;
+}
+
+.sfft-button-danger {
+    background: #e74c3c;
+    border-color: #c0392b;
+    color: white;
+}
+
+.sfft-button-danger:hover,
+.sfft-button-danger:focus {
+    background: #c0392b;
+    border-color: #a93226;
+}
+
+/* Responsive Design */
+@media (max-width: 782px) {
+    .sfft-admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .sfft-admin-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .sfft-step-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .sfft-step-actions {
+        align-self: flex-end;
+    }
+    
+    .sfft-utm-filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .sfft-utm-filters input {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sfft-step-fields input,
+    .sfft-step-fields select {
+        max-width: 100%;
+    }
+    
+    .form-table th,
+    .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .form-table th {
+        padding-bottom: 5px;
+    }
+}
+
+/* Loading States */
+.sfft-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.sfft-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: sfft-spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes sfft-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tooltips */
+.sfft-tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.sfft-tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* Data Export Styles */
+.sfft-export-options {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.sfft-export-options h4 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.sfft-export-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Accessibility */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+/* Focus styles */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .sfft-step-item {
+        border: 2px solid #000;
+    }
+    
+    .sfft-step-header {
+        background: #f0f0f0;
+        border-bottom: 2px solid #000;
+    }
+    
+    .sfft-conversion-rate {
+        border: 1px solid currentColor;
+    }
+}
