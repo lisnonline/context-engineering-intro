@@ -235,10 +235,21 @@ class SFFT_Admin_Interface {
             
             <?php $this->show_admin_notices(); ?>
             
-            <form method="get">
-                <input type="hidden" name="page" value="sfft-funnels">
-                <?php $list_table->search_box(__('Search Funnels', 'simple-funnel-tracker'), 'funnel'); ?>
-            </form>
+            <?php if (empty($list_table->items)): ?>
+                <div class="notice notice-info">
+                    <p>
+                        <?php echo esc_html__('No funnels found.', 'simple-funnel-tracker'); ?>
+                        <a href="<?php echo esc_url(admin_url('admin.php?page=sfft-add-funnel')); ?>" class="button button-primary">
+                            <?php echo esc_html__('Create Your First Funnel', 'simple-funnel-tracker'); ?>
+                        </a>
+                    </p>
+                </div>
+            <?php else: ?>
+                <form method="get">
+                    <input type="hidden" name="page" value="sfft-funnels">
+                    <?php $list_table->search_box(__('Search Funnels', 'simple-funnel-tracker'), 'funnel'); ?>
+                </form>
+            <?php endif; ?>
             
             <form method="post">
                 <?php
@@ -677,6 +688,18 @@ class SFFT_Funnels_List_Table extends WP_List_Table {
         
         $data = $this->funnel_manager->get_all_funnels($args);
         
+        // Debug output - remove after fixing
+        if (current_user_can('manage_options') && isset($_GET['debug'])) {
+            echo '<div class="notice notice-warning"><p><strong>Debug Info:</strong><br>';
+            echo 'Total Items: ' . $data['total_items'] . '<br>';
+            echo 'Funnels Count: ' . count($data['funnels']) . '<br>';
+            echo 'SQL Errors: ' . ($GLOBALS['wpdb']->last_error ? $GLOBALS['wpdb']->last_error : 'None') . '<br>';
+            if (!empty($data['funnels'])) {
+                echo 'First Funnel: ' . print_r($data['funnels'][0], true);
+            }
+            echo '</p></div>';
+        }
+        
         $this->items = $data['funnels'];
         
         $this->set_pagination_args(array(
@@ -684,5 +707,15 @@ class SFFT_Funnels_List_Table extends WP_List_Table {
             'per_page' => $per_page,
             'total_pages' => $data['total_pages']
         ));
+    }
+    
+    /**
+     * Display when no items found
+     *
+     * @since 1.0.0
+     * @return void
+     */
+    public function no_items() {
+        _e('No funnels found. <a href="' . admin_url('admin.php?page=sfft-add-funnel') . '">Create your first funnel</a>', 'simple-funnel-tracker');
     }
 }
