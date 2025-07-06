@@ -1,0 +1,286 @@
+/**
+ * Simple Funnel Tracker - Public Styles
+ * 
+ * Styles for cookie consent banner and tracking interface
+ */
+
+/* Cookie Consent Banner */
+.sfft-consent-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.sfft-consent-banner.sfft-consent-bottom {
+    bottom: 0;
+}
+
+.sfft-consent-banner.sfft-consent-top {
+    top: 0;
+}
+
+.sfft-consent-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sfft-consent-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.sfft-consent-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sfft-consent-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.sfft-consent-accept {
+    background: #27ae60;
+    color: white;
+}
+
+.sfft-consent-accept:hover {
+    background: #219a52;
+}
+
+.sfft-consent-decline {
+    background: #e74c3c;
+    color: white;
+}
+
+.sfft-consent-decline:hover {
+    background: #c0392b;
+}
+
+.sfft-consent-customize {
+    background: #3498db;
+    color: white;
+}
+
+.sfft-consent-customize:hover {
+    background: #2980b9;
+}
+
+/* Cookie Consent Modal */
+.sfft-consent-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sfft-consent-modal-content {
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sfft-consent-modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sfft-consent-modal-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+.sfft-consent-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #7f8c8d;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sfft-consent-modal-close:hover {
+    color: #2c3e50;
+}
+
+.sfft-consent-modal-body {
+    padding: 20px;
+}
+
+.sfft-consent-categories {
+    margin-top: 20px;
+}
+
+.sfft-consent-category {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.sfft-consent-category label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.sfft-consent-category-checkbox {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.sfft-consent-category-label {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.sfft-consent-category-description {
+    margin-top: 8px;
+    margin-left: 28px;
+    color: #7f8c8d;
+    font-size: 13px;
+}
+
+.sfft-consent-modal-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.sfft-consent-primary {
+    background: #3498db;
+    color: white;
+}
+
+.sfft-consent-primary:hover {
+    background: #2980b9;
+}
+
+.sfft-consent-secondary {
+    background: #27ae60;
+    color: white;
+}
+
+.sfft-consent-secondary:hover {
+    background: #219a52;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sfft-consent-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sfft-consent-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .sfft-consent-btn {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .sfft-consent-modal {
+        padding: 10px;
+    }
+    
+    .sfft-consent-modal-content {
+        max-height: 90vh;
+    }
+    
+    .sfft-consent-modal-footer {
+        flex-direction: column;
+    }
+}
+
+/* Bar style (compact) */
+.sfft-consent-banner.sfft-consent-bar {
+    padding: 15px 20px;
+}
+
+.sfft-consent-banner.sfft-consent-bar .sfft-consent-content {
+    gap: 15px;
+}
+
+.sfft-consent-banner.sfft-consent-bar .sfft-consent-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+/* Accessibility */
+.sfft-consent-btn:focus,
+.sfft-consent-category-checkbox:focus,
+.sfft-consent-modal-close:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .sfft-consent-banner {
+        background: #000;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+    
+    .sfft-consent-btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .sfft-consent-btn,
+    .sfft-consent-modal {
+        transition: none;
+    }
+}
