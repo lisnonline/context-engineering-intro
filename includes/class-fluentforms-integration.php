@@ -522,8 +522,21 @@ class SFFT_FluentForms_Integration {
             return array();
         }
         
+        global $wpdb;
+        
         try {
-            $forms = fluentFormApi('forms')->all();
+            // Query FluentForms table directly
+            $forms_table = $wpdb->prefix . 'fluentform_forms';
+            
+            // Check if table exists
+            if ($wpdb->get_var("SHOW TABLES LIKE '{$forms_table}'") !== $forms_table) {
+                return array();
+            }
+            
+            $forms = $wpdb->get_results(
+                "SELECT id, title, status, form_fields FROM {$forms_table} WHERE status = 'published' ORDER BY title ASC"
+            );
+            
             $available_forms = array();
             
             foreach ($forms as $form) {
